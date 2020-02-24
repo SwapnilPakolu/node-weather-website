@@ -1,7 +1,13 @@
 const request = require('request');
-const util_secret = require('./util_secret');
+try {const util_secret = require('./util_secret');
 var mapbox_access_token = util_secret.mapbox_access_token;
-var darksky_secret = util_secret.darksky_secret;
+var darksky_secret = util_secret.darksky_secret;}
+catch(e){
+  var mapbox_access_token = process.env.MAPBOX_ACCESS_TOKEN;
+var darksky_secret = process.env.DARKSKY_SECRET;
+}
+
+
 
 
 const geocode = function(address,callback){
