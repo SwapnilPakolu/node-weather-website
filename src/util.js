@@ -54,9 +54,11 @@ const forecast = (latitude,longitude,callback)=>{
     {callback(body.error,undefined);}
     else
     {
-    const {temperature,precipProbability } =  body.currently;
+    const {temperature} = body.currently
+    const {precipProbability,summary,temperatureHigh,temperatureLow } =  body.daily.data[0];
+    console.log(body.daily.data[0]);
 
-    callback(undefined,`It is currently ${temperature} degrees out. There is a ${precipProbability}% chance of rain`);
+    callback(undefined,`Weather is ${summary} It is currently ${temperature} degree fahrenheit. Today's highest temperature and lowest temperature  is ${temperatureHigh} Fahrenheit and ${temperatureLow} degree Fahrenheit respectively. There is a ${precipProbability}% chance of rain`);
     }
     
   });
