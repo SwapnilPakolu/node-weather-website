@@ -1,8 +1,4 @@
 
-
-
-
-
   const form = document.querySelector('form');
   const search = document.querySelector('input');
   const message1 = document.querySelector('#message_1');
@@ -20,7 +16,6 @@
     {
       message1.textContent = data.error;
       message2.textContent='';
-      //console.log(data.error);
       return;
     }
     message1.textContent = data.place_name;

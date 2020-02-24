@@ -70,10 +70,6 @@ app.get('/weather',(req,res)=>{
 
   })
 
-  // res.send({
-  //   forecast:'clear sky',
-  //   location:'pune',
-  //   address  });
 });
 
 app.get('/products',(req,res)=>{
